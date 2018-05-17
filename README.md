@@ -17,7 +17,7 @@ function flexible(arg, cb) {
   return procb(new Promise((resolve, reject) => {
     if (arg === 'good') resolve(arg)
     else reject(arg)
-  })
+  }, cb)
 }
 ```
 
