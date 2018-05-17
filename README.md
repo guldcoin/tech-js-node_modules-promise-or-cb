@@ -16,7 +16,7 @@ This library has no dependencies.
 var porcb = require('promise-or-cb')
 
 function flexible(arg, cb) {
-  return procb(new Promise((resolve, reject) => {
+  return porcb(new Promise((resolve, reject) => {
     if (arg === 'good') resolve(arg)
     else reject(arg)
   }, cb)
