@@ -1,20 +1,28 @@
-unpromise
-=========
+# promise-or-cb
 
-Sometimes you want a promise to work with a callback.
+Support both Promises and callbacks for your code. Simply wrap your response with this function and pass the optional callback parameter. If callback is not defined, a Promise will be returned. Otherwise, the Promise will be resolved or rejected to the callback function, using standard `(err, result)` style. Works with both legacy `.success` and `.error` style Promises as well as modern `.then` and `.catch` syntax.
 
-install: `npm install unpromise`
+This library has no dependencies.
 
-example: 
+### Install
+
+`npm i promise-or-cb`
+
+### Usage
 
 ``` js
-var unpromise = require('unpromise');
+var porcb = require('promise-or-cb')
 
-function createTask(str, callback) {
-  // task.create returns an object that
-  // has .success and .error methods
-  var somePromise = task.create();
-  unpromise(somePromise, callback);
+function flexible(arg, cb) {
+  return procb(new Promise((resolve, reject) => {
+    if (arg === 'good') resolve(arg)
+    else reject(arg)
+  })
 }
 ```
 
+### Credit
+
+This project started as a fork of [unpromise](https://github.com/sugendran/unpromise), which appears abandoned. Since the code was completely rewritten with new features, I consider it orginal IP at this point.  Still, at least one test case was copied from that project, and Sugendran Ganess deserves credit.
+
+Both projects are licensed MIT.

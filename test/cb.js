@@ -6,7 +6,7 @@ describe('callback normal Promise', () => {
     var p = porcb(new Promise((resolve, reject) => {
       resolve('success')
     }), (err, result) => {
-      assert(typeof err === 'undefined')
+      assert(err === null)
       assert(result === 'success')
       done()
     })
@@ -18,7 +18,7 @@ describe('callback normal Promise', () => {
     }), (err, result) => {
       assert(err instanceof Error)
       assert(err.message === 'failure')
-      assert(typeof result === 'undefined')
+      assert(result === undefined)
       done()
     })
     assert(!(p instanceof Promise))
