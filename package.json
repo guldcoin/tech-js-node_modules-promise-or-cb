@@ -1,21 +1,37 @@
 {
-  "name": "unpromise",
-  "version": "0.0.1",
-  "description": "Call a callback appropriately from a promise",
+  "name": "promise-or-cb",
+  "version": "1.0.0",
+  "description": "Support both callback and promise style functions.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sugendran/unpromise"
+    "url": "https://github.com/isysd/promise-or-cb"
   },
-  "author": "Sugendran Ganess",
+  "author": "Ira Miller",
   "license": "MIT",
   "readmeFilename": "README.md",
   "scripts": {
-    "test": "node test.js"
+    "test": "mocha test/*.js -b",
+    "lint": "eslint --env browser *.js* && eslint --env node *.js*",
+    "fix": "eslint --fix *.js*",
+    "pre-commit": "npm run test && npm run lint"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-es5": "^1.3.1",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-json": "^1.2.0",
+    "mocha": "^3.5.3",
+    "pre-commit": "^1.2.2"
   },
   "keywords": [
     "promise",
     "callback",
     "async"
+  ],
+  "pre-commit": [
+    "lint",
+    "test"
   ]
 }

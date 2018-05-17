@@ -1,9 +1,16 @@
-module.exports = function(promise, callback) {
-  // Yes I know I could just stick the callback
-  // as the arg here but I want to be explicit!
-  promise.error(function(err) {
-    callback(err);
-  }).success(function(val) {
-    callback(null, val);
-  });
-};
+module.exports = function (p, cb) {
+  if (typeof cb === 'undefined') return p
+  else if (p.hasOwnProperty('onFailure') && p.hasOwnProperty('onSuccess')) {
+    p.success(val => {
+      cb(undefined, val)
+    }).error(e => {
+      cb(e)
+    })
+  } else {
+    p.then(val => {
+      cb(undefined, val)
+    }).catch(e => {
+      cb(e)
+    })
+  }
+}
