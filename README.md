@@ -1,5 +1,7 @@
 # promise-or-cb
 
+[![Coverage Status](https://coveralls.io/repos/github/isysd/promise-or-cb/badge.svg?branch=master)](https://coveralls.io/github/isysd/promise-or-cb?branch=master)
+
 Support both Promises and callbacks for your code. Simply wrap your response with this function and pass the optional callback parameter. If callback is not defined, a Promise will be returned. Otherwise, the Promise will be resolved or rejected to the callback function, using standard `(err, result)` style. Works with both legacy `.success` and `.error` style Promises as well as modern `.then` and `.catch` syntax.
 
 This library has no dependencies.

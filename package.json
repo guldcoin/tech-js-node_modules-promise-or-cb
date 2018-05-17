@@ -11,13 +11,14 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "scripts": {
-    "test": "mocha test/*.js -b",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "lint": "eslint --env browser *.js* && eslint --env node *.js*",
     "fix": "eslint --fix *.js*",
     "pre-commit": "npm run test && npm run lint"
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-plugin-es5": "^1.3.1",
     "eslint-plugin-import": "^2.12.0",
