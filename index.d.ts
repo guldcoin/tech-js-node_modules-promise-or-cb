@@ -1,1 +1,1 @@
-export declare function porcb(p: Promise<any> | any, cb?: Function | void): Promise<any> | void;
+export declare function porcb(p: Promise<any> | any, cb?: Function): Promise<any> | void;
