@@ -1,16 +1,22 @@
-module.exports = function (p, cb) {
-  if (typeof cb === 'undefined') return p
-  else if (p.hasOwnProperty('onFailure') && p.hasOwnProperty('onSuccess')) {
-    p.success(val => {
-      cb(null, val)
-    }).error(e => {
-      cb(e)
-    })
-  } else {
-    p.then(val => {
-      cb(null, val)
-    }).catch(e => {
-      cb(e)
-    })
-  }
+"use strict";
+exports.__esModule = true;
+function porcb(p, cb) {
+    if (typeof cb === 'undefined') {
+        return p;
+    }
+    else if (p.hasOwnProperty('onFailure') && p.hasOwnProperty('onSuccess')) {
+        p.success(function (val) {
+            cb(null, val);
+        }).error(function (e) {
+            cb(e);
+        });
+    }
+    else {
+        p.then(function (val) {
+            cb(null, val);
+        })["catch"](function (e) {
+            cb(e);
+        });
+    }
 }
+exports.porcb = porcb;
