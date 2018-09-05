@@ -1,5 +1,3 @@
-"use strict";
-exports.__esModule = true;
 function porcb(p, cb) {
     if (typeof cb === 'undefined') {
         return p;
@@ -14,7 +12,7 @@ function porcb(p, cb) {
     else {
         p.then(function (val) {
             cb(null, val);
-        })["catch"](function (e) {
+        }).catch(function (e) {
             cb(e);
         });
     }

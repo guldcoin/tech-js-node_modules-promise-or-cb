@@ -1,14 +1,18 @@
 # promise-or-cb
 
-[![Build Status](https://travis-ci.org/isysd/promise-or-cb.svg?branch=master)](https://travis-ci.org/isysd/promise-or-cb) [![Coverage Status](https://coveralls.io/repos/github/isysd/promise-or-cb/badge.svg?branch=master)](https://coveralls.io/github/isysd/promise-or-cb?branch=master)
+[![source](https://img.shields.io/badge/source-bitbucket-blue.svg)](https://bitbucket.org/guld/tech-js-node_modules-promise-or-cb) [![issues](https://img.shields.io/badge/issues-bitbucket-yellow.svg)](https://bitbucket.org/guld/tech-js-node_modules-promise-or-cb/issues) [![documentation](https://img.shields.io/badge/docs-guld.tech-green.svg)](https://guld.tech/lib/promise-or-cb.html)
 
-Support both Promises and callbacks for your code. Simply wrap your response with this function and pass the optional callback parameter. If callback is not defined, a Promise will be returned. Otherwise, the Promise will be resolved or rejected to the callback function, using standard `(err, result)` style. Works with both legacy `.success` and `.error` style Promises as well as modern `.then` and `.catch` syntax.
+[![node package manager](https://img.shields.io/npm/v/promise-or-cb.svg)](https://www.npmjs.com/package/promise-or-cb) [![travis-ci](https://travis-ci.org/guldcoin/tech-js-node_modules-promise-or-cb.svg)](https://travis-ci.org/guldcoin/tech-js-node_modules-promise-or-cb?branch=guld) [![lgtm](https://img.shields.io/lgtm/grade/javascript/b/guld/tech-js-node_modules-promise-or-cb.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/b/guld/tech-js-node_modules-promise-or-cb/context:javascript) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-promise-or-cb/status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-promise-or-cb) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-promise-or-cb/dev-status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-promise-or-cb?type=dev)
 
-This library has no dependencies.
+Support both callback and promise style functions.
 
 ### Install
 
-`npm i promise-or-cb`
+##### Node
+
+```sh
+npm i promise-or-cb
+```
 
 ### Usage
 
@@ -28,3 +32,7 @@ function flexible(arg, cb) {
 This project started as a fork of [unpromise](https://github.com/sugendran/unpromise), which appears abandoned. Since the code was completely rewritten with new features, I consider it orginal IP at this point.  Still, at least one test case was copied from that project, and Sugendran Ganess deserves credit.
 
 Both projects are licensed MIT.
+
+### License
+
+MIT Copyright Ira Miller
